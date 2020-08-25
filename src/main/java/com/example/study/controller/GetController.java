@@ -21,4 +21,13 @@ public class GetController {
 
         return id+pwd;
     }
+
+    //localhost:8080/api/multiParameter?account=abc&email=study@gmail.com&page=10
+    public String getMultiParameter(@RequestParam String account,
+                                    @RequestParam String email,
+                                    @RequestParam int page){
+        return account+email+page;
+    }
+
+
 }
