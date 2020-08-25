@@ -6,6 +6,15 @@ public class SearchParam {
     private String email;
     private int page;
 
+    public SearchParam() {
+    }
+
+    public SearchParam(String account, String email, int page) {
+        this.account = account;
+        this.email = email;
+        this.page = page;
+    }
+
     public String getAccount() {
         return account;
     }
