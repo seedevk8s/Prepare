@@ -1,5 +1,6 @@
 package com.example.study.controller;
 
+import com.example.study.model.SearchParam;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,11 +23,13 @@ public class GetController {
         return id+pwd;
     }
 
-    //localhost:8080/api/multiParameter?account=abc&email=study@gmail.com&page=10
-    public String getMultiParameter(@RequestParam String account,
-                                    @RequestParam String email,
-                                    @RequestParam int page){
-        return account+email+page;
+    //localhost:8080/api/getMultiParameter?account=abc&email=study@gmail.com&page=10
+    @GetMapping("/getMultiParameter")
+    public String getMultiParameter(SearchParam searchParam){
+        System.out.println(searchParam.getAccount());
+        System.out.println(searchParam.getEmail());
+        System.out.println(searchParam.getPage());
+        return "OK";
     }
 
 
