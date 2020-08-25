@@ -4,6 +4,7 @@ import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -38,7 +39,16 @@ public class UserRepositoryTest extends StudyApplicationTests {
        });
     }
 
+    @Test
     public void update(){
+        Optional<User> user = userRepository.findById(2L);
+        user.ifPresent(selectUser -> {
+            selectUser.setAccount("TestUser04");
+            selectUser.setUpdatedAt(LocalDateTime.now());
+            selectUser.setUpdatedBy("update mehtod()");
+
+            userRepository.save(selectUser);
+        });
 
     }
 
