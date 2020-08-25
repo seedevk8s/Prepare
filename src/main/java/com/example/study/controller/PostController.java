@@ -9,9 +9,8 @@ public class PostController {
 
     //@RequestMapping(method = RequestMethod.POST, path = "/postMethod")
     @PostMapping("/postMethod")
-    public String postMethod(@RequestBody SearchParam searchParam){
+    public SearchParam postMethod(@RequestBody SearchParam searchParam){
 
-
-        return "OKay";
+        return searchParam;
     }
 }
