@@ -13,10 +13,12 @@ public class GetController {
     }
 
     @GetMapping("/getParameter")                                            // // localhost:8080/api/getParameter?id=1234&password=abcd
-    public String getParameter(@RequestParam String id, @RequestParam String password){
-        System.out.println("id : " + id);
-        System.out.println("password : " + password);
+    public String getParameter(@RequestParam String id, @RequestParam(name = "password") String pwd){
+        String password = "1111";
 
-        return id+password;
+        System.out.println("id : " + id);
+        System.out.println("password : " + pwd);
+
+        return id+pwd;
     }
 }
