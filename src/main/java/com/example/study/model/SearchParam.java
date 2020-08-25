@@ -9,6 +9,10 @@ public class SearchParam {
     public SearchParam() {
     }
 
+    public SearchParam(String account) {
+        this.account = account;
+    }
+
     public SearchParam(String account, String email, int page) {
         this.account = account;
         this.email = email;
